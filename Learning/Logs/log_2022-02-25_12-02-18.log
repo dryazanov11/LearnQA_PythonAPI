@@ -1,0 +1,16 @@
+
+-----
+Test: Ex15_Тесты_на_метод_user.py::TestMethodUser::test_create_user_without_any_value[password] (call)
+Time: 2022-02-25 12:02:18.707071
+Request method: POST
+Request URL: https://playground.learnqa.ru/api_dev/user/
+Request data: {'username': 'learnqa', 'firstName': 'learnqa', 'lastName': 'learnqa', 'email': 'emailjustfortest_ryaz@example.com'}
+Request headers: {'username': 'learnqa', 'firstName': 'learnqa', 'lastName': 'learnqa', 'email': 'emailjustfortest_ryaz@example.com'}
+Request cookies: {}
+
+Response code: 400
+Response text: The following required params are missed: password
+Response header: {'Date': 'Fri, 25 Feb 2022 09:02:19 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': '50', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=10', 'Server': 'Apache'}
+Response cookies: {}
+
+-----

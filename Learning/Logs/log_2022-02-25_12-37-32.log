@@ -1,0 +1,32 @@
+
+-----
+Test: Ex15_Тесты_на_метод_user.py::TestMethodUser::test_short_firstname (call)
+Time: 2022-02-25 12:37:32.788067
+Request method: POST
+Request URL: https://playground.learnqa.ru/api_dev/user/
+Request data: {'password': 123, 'username': 'learnqa', 'firstName': 'l', 'lastName': 'learnqa', 'email': 'emailjustfortest_ryaz@example.com'}
+Request headers: {'password': 123, 'username': 'learnqa', 'firstName': 'l', 'lastName': 'learnqa', 'email': 'emailjustfortest_ryaz@example.com'}
+Request cookies: {}
+
+Response code: 400
+Response text: The value of 'firstName' field is too short
+Response header: {'Date': 'Fri, 25 Feb 2022 09:37:33 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': '43', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=10', 'Server': 'Apache'}
+Response cookies: {}
+
+-----
+
+-----
+Test: Ex15_Тесты_на_метод_user.py::TestMethodUser::test_long_firstname (call)
+Time: 2022-02-25 12:37:33.412510
+Request method: POST
+Request URL: https://playground.learnqa.ru/api_dev/user/
+Request data: {'password': 123, 'username': 'learnqa', 'firstName': 'lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll', 'lastName': 'learnqa', 'email': 'emailjustfortest_ryaz@example.com'}
+Request headers: {'password': 123, 'username': 'learnqa', 'firstName': 'lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll', 'lastName': 'learnqa', 'email': 'emailjustfortest_ryaz@example.com'}
+Request cookies: {}
+
+Response code: 400
+Response text: The value of 'firstName' field is too long
+Response header: {'Date': 'Fri, 25 Feb 2022 09:37:33 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': '42', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=10', 'Server': 'Apache'}
+Response cookies: {}
+
+-----

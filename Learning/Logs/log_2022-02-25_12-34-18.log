@@ -1,0 +1,16 @@
+
+-----
+Test: Ex15_Тесты_на_метод_user.py::TestMethodUser::test_short_firstname (call)
+Time: 2022-02-25 12:34:18.568248
+Request method: POST
+Request URL: https://playground.learnqa.ru/api_dev/user/
+Request data: {'password': 123, 'username': 'learnqa', 'firstName': 'l111111', 'lastName': 'learnqa', 'email': 'emailjustfortest_ryaz@example.com'}
+Request headers: {'password': 123, 'username': 'learnqa', 'firstName': 'l111111', 'lastName': 'learnqa', 'email': 'emailjustfortest_ryaz@example.com'}
+Request cookies: {}
+
+Response code: 200
+Response text: {"id":"27173"}
+Response header: {'Date': 'Fri, 25 Feb 2022 09:34:19 GMT', 'Content-Type': 'application/json', 'Content-Length': '14', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=10', 'Server': 'Apache', 'Cache-Control': 'max-age=0', 'Expires': 'Fri, 25 Feb 2022 09:34:18 GMT'}
+Response cookies: {}
+
+-----
