@@ -1,5 +1,6 @@
 import requests
 import pytest
+import allure
 
 data = [
     'Mozilla/5.0 (Linux; U; Android 4.0.2; en-us; Galaxy Nexus Build/ICL53F) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30',
@@ -9,6 +10,8 @@ data = [
     'Mozilla/5.0 (iPad; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1'
 ]
 
+@allure.epic('Check user agent')
+@allure.description('Check user agent in response with true data')
 @pytest.mark.parametrize('user_agent', data)
 def test_user_agent(user_agent):
     response = requests.get('https://playground.learnqa.ru/ajax/api/user_agent_check', headers={"User-Agent": user_agent})

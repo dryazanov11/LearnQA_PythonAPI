@@ -1,9 +1,12 @@
 from lib.my_requests import MyRequests
 from lib.base_case import BaseCase
 from lib.assertions import Assertions
+import allure
 
+@allure.epic('Проверка GET метода')
 class TestUserWithAnotherId(BaseCase):
-
+    @allure.description('Проверка, что метод GET вернет только username, если постучаться к нему с '
+                        'чужими авторизационными данными')
     def test_get_user_details_auth_as_same_user(self):
         data = {
             'email': 'vinkotov@example.com',
