@@ -70,7 +70,7 @@ class TestUserDelete(BaseCase):
         auth_sid = self.get_cookie(response2, 'auth_sid')
         token = self.get_header(response2, 'x-csrf-token')
 
-        # REGISTER SECOND USER
+        # REGISTER AND LOGIN SECOND USER
         time.sleep(1)
         register_data1 = self.prepare_registration_data()
         response_1 = MyRequests.post('/user/', data=register_data1)
@@ -78,8 +78,26 @@ class TestUserDelete(BaseCase):
         Assertions.assert_json_has_key(response_1, 'id')
 
         user_id1 = self.get_json_value(response_1, 'id')
+        email1 = register_data1['email']
+        password1 = register_data1['password']
+
+        login_data1 = {
+            'email': email1,
+            'password': password1
+        }
+        response_2 = MyRequests.post('/user/login', data=login_data1)
+
+        auth_sid1 = self.get_cookie(response_2, 'auth_sid')
+        token1 = self.get_header(response_2, 'x-csrf-token')
 
         response_final = MyRequests.delete(f'/user/{user_id1}',
                                       headers={'x-csrf-token': token},
                                       cookies={'auth_sid': auth_sid})
-        print(response_final.status_code)
+        Assertions.assert_code_status(response_final, 200)
+
+        #CHECK USER WHO MUST BE NOT DELETE
+        response_check = MyRequests.get(f'/user/{user_id1}',
+                                   headers={'x-csrf-token': token1},
+                                   cookies={'auth_sid': auth_sid1})
+        expected_fields = ['username', 'email', 'firstName', 'lastName']
+        Assertions.assert_json_has_keys(response_check, expected_fields)
